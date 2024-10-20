@@ -45,6 +45,7 @@ const verifyQuery = (request, response, next) => {
     } else {
       response.status(400)
       response.send('Invalid Todo Category')
+      return
     }
   }
 
@@ -56,6 +57,7 @@ const verifyQuery = (request, response, next) => {
     } else {
       response.status(400)
       response.send('Invalid Todo Priority')
+      return
     }
   }
 
@@ -67,6 +69,7 @@ const verifyQuery = (request, response, next) => {
     } else {
       response.status(400)
       response.send('Invalid Todo Status')
+      return
     }
   }
 
@@ -80,10 +83,10 @@ const verifyQuery = (request, response, next) => {
     } else {
       response.status(400)
       response.send('Invalid Due Date')
+      return
     }
   }
-
-  next()
+  
 }
 
 const changeCase = result => {
